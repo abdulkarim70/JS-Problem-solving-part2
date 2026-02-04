@@ -19,8 +19,22 @@ const full =fullName(2, "Karim");
 console.log(full)
 
 function getPrice (product){
+    if(typeof product!==Object){
+        return "Please provide an object"
+    }
     const price = product.price;
     return price
 }
-const price = getPrice({name:'Chokolet',price: 35,color:"green",})
-console.log(price)
+// const price = getPrice({name:'Chokolet',price: 35,color:"green",})
+const price =getPrice(5)
+// console.log(price)
+function getSecond(numbers){
+    if(Array.isArray(numbers)===false){
+        return 'please provide an array'
+    }  ///array checking process
+    console.log(typeof numbers)
+    const second = numbers[1];
+    return second;
+}
+const second =getSecond([1,25,69]);
+console.log(second)
