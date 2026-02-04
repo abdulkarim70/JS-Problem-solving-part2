@@ -17,3 +17,10 @@ return full
 }
 const full =fullName(2, "Karim");
 console.log(full)
+
+function getPrice (product){
+    const price = product.price;
+    return price
+}
+const price = getPrice({name:'Chokolet',price: 35,color:"green",})
+console.log(price)
