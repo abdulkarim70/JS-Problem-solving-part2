@@ -3,6 +3,7 @@ function checkPassword(password){
 let length = password.length;
 let hasUpperCase=false;
 let hasNumber=false;
+let hasSpace=password.includes(" ")
 for(let i=0;i<length;i++){
     let character = password[i]
    if(character>='0' && character<='9'){
@@ -18,13 +19,16 @@ if(!hasNumber){
 if(!hasUpperCase){
     reasons.push('Missing Upper Case')
 }
-console.log(password.includes(' '))
+if(hasSpace==true){
+    reasons.push('space found')
+}
+let isValid= reasons.length==0;
 
 return{
-    valid: true,
+    valid: isValid,
     reasons
 };
 }
-let output =checkPassword('helloWorld');
+let output =checkPassword('helloWorld2');
 let output2 =checkPassword('hello123');
 console.log(output,)
